@@ -1,0 +1,24 @@
+{% extends '../components/main.html' %}
+
+
+{% block content %}
+
+{% include '../components/header.html' %}
+
+<main class="main">
+    
+      <form class="form" action="" method="POST" >
+        {% csrf_token %}
+        {% for message in messages %}
+        <p class="msg">{{message}}</p>
+        {% endfor %}
+        <label for="username">username</label>
+        <input name="username" type="text" placeholder="username">
+        <label for="password">password</label>
+        <input name="password" type="password" placeholder="password">
+        <button type="submit">Login</button>
+      </form>
+    
+</main>
+
+{% endblock content %}

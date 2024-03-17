@@ -1,5 +1,66 @@
-img {
-    background-color: green;
-    padding: 10px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: aqua;
+}
+
+.header > a {
+    border: 1px solid black;
+    color: black;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    height: 400px;
+    
+    
+}
+
+.form > input{
+    height: 26px;
+    margin-bottom: 9px;
     border-radius: 10px;
+}
+
+.form > button{
+    height: 26px;
+    background-color: aqua;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.form > label{
+    opacity: 0.7;
+}
+
+.msg {
+    color: red;
+    font-size: 10px;
 }
