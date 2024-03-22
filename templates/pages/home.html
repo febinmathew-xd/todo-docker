@@ -1,0 +1,40 @@
+{% extends '../components/main.html' %}
+
+{% block content %}
+
+{% include '../components/header.html' %}
+
+
+<main class="">
+    <div class="container">
+        <div class="input">
+            <form method="POST" action="{% url 'add-todo' %}">
+                {% csrf_token %}
+               <input type="text" placeholder="enter the task" name="task">
+               <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="list">
+          <h2>Todos</h2>
+          <ul>
+            {% for todo in todos %}
+              <li class="list-element" style="display: flex; padding: 10px;">
+                <a href="{% url 'finish-todo' todo.pk %}">
+                  <input {% if not todo.is_active %} checked {% endif %} type="checkbox">
+                  </a>
+                  <p>{{todo.task}}</p>
+                  <a href="{% url 'delete-todo' todo.id %}">delete</a>
+              </li>
+              {% endfor %}
+        
+              
+              
+        </ul>
+        </div>
+    </div>
+
+</main>
+
+
+
+{% endblock content %}

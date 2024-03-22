@@ -64,3 +64,12 @@
     color: red;
     font-size: 10px;
 }
+
+
+.container {
+    width: 800px;
+}
+
+.list-element {
+    display: flex;
+}

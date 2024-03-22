@@ -1,6 +1,7 @@
 
     <header class="header">
         {% if request.user.is_authenticated %}
+        <p>{{user.username}}</p>
         <a class="header-btn" href="{% url 'logout' %}">logout</a>
         {% else %}
 
@@ -10,6 +11,7 @@
         <a class="header-btn" href="{% url 'login' %}">login</a>
         {% endif %}
         {% endif %}
+        
 
     </header>
     
