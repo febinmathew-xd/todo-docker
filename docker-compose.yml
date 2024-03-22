@@ -2,7 +2,10 @@ version: '3'
 
 services:
   db:
-    image: db
+    build: 
+      context: ./postgres/
+      
+
     container_name: db
     restart: unless-stopped
     environment:
@@ -24,7 +27,9 @@ services:
   todoapp:
     depends_on:
       - db
-    image: todoapp
+    build: 
+       context: .
+       
     container_name: todo-app
     restart: unless-stopped
     environment:
@@ -34,7 +39,7 @@ services:
       - DB_HOST=db
     command: python manage.py runserver 0.0.0.0:8000
     ports:
-      - "8000:8000"
+      - "80:8000"
     volumes:
       - ./:/usr/src/app
     networks:
